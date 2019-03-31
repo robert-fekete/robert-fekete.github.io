@@ -2,3 +2,5 @@ title: Corner of the Hyper-plane
 author: Robert Fekete
 github_username: robert-fekete
 theme: jekyll-theme-midnight
+
+show_excerpts: true
