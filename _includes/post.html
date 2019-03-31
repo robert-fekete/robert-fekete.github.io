@@ -1,0 +1,24 @@
+<div class="header">
+    <h1 class="title">{{ page.title }}<span class="title-author"> by {{ site.author }}</span></h1>
+</div>
+
+<div class="content">
+    {{ content }}
+</div>
+
+<div class="post-meta">
+    <div>Posted on {{ page.date | date_to_string }}</div>
+    {% unless page.tags == empty %}
+    <div>Tags: 
+        
+        {% assign sorted_tags = (page.tags | sort) %}
+        {% for tag in sorted_tags %}
+            <span class="post-tag">{{ tag }}</span>
+        {% endfor %}
+    </div>
+    {% endunless %}
+</div>
+
+<div class="post-pagination">
+    *Navitagtion*
+</div>
