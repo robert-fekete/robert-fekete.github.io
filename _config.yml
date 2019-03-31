@@ -6,3 +6,5 @@ permalink: /:categories/:year/:month/:day/:title/
 show_excerpts: true
 
 markdown: kramdown
+sass:
+  style: compressed
