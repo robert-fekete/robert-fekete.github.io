@@ -7,7 +7,7 @@
 </div>
 
 <div class="post-meta">
-    <div>Posted on {{ page.date | date_to_string }}</div>
+    <div>Posted on {{ page.date | date: "%B %e, %Y" }}</div>
     {% unless page.tags == empty %}
     <div>Tags: 
         
