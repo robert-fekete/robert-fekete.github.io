@@ -1,0 +1,40 @@
+@import 'colors';
+@import 'position';
+
+.index-list{
+    padding: 0px;
+    margin: 0px;
+    
+    .index-listitem{
+
+        display: inline-block;
+        
+        .index-post{
+
+            padding: 0px 0px $content_padding 20px;
+            
+            .index-post-date{
+                color: $highlight_color5;
+                font-size: 20px;
+            }
+            
+            .index-post-excerpt{
+                font-size: 20px;
+                p{
+                    text-align: justify;
+                }
+            }
+            
+            .index-post-title{
+                font-family: $header_font_family;
+                font-weight: 600;
+                font-size: 2rem;
+                color: $highlight_color4;
+            }
+            
+            a.index-post-more:link, a.index-post-more:hover, a.index-post-more:visited{
+                color: $highlight_color3;
+            }
+        }
+    }
+}

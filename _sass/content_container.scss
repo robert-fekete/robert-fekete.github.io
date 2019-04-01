@@ -1,0 +1,28 @@
+@import 'position';
+@import 'colors';
+@import 'links';
+@import 'fonts';
+
+.body{
+    background-color: $color2;
+    font-family: $body_font_family;
+
+    .content-container{
+        color: $font_color;
+        margin: 0px 0px 0px $navbar_width;
+        height: 100%;
+        padding: $content_padding 0px 0px $content_padding;
+        top: 0;
+        
+        .content-container-center{
+            width: 1000px;
+            overflow-y: hidden;
+        }
+    }
+
+    .footer{
+        text-align: center;
+        font-size: 18px;
+        color: $font_fade_color;
+    }
+}
