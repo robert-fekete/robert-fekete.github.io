@@ -8,3 +8,7 @@ show_excerpts: true
 markdown: kramdown
 sass:
   style: compressed
+
+github_handle: robert-fekete
+twitter_handle: "rofekete"
+bitbucket_handle: robert-fekete
