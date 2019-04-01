@@ -3,15 +3,17 @@ layout: page
 permalink: /index/
 ---
 
-<ul>
+<ul class="index-list">
     {% for post in site.posts %}
-        <li>
-            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-            <div class="blog-post-date">Posted on {{ post.date | date: "%B %e, %Y" }}</div>
-            <p>{{ post.excerpt }}</p>
-            <a href="{{ post.url }}">
-                More...
-            </a>
+        <li class="index-listitem">
+            <div class="index-post">
+                <a href="{{ post.url }}" class="nav-link index-post-title">{{ post.title }}</a>
+                <div class="index-post-date">Posted on {{ post.date | date: "%B %e, %Y" }}</div>
+                <div class="index-post-excerpt">{{ post.excerpt }}</div>
+                <a href="{{ post.url }}" class="index-post-more">
+                    More...
+                </a>
+            </div>
         </li>
     {% endfor %}
 </ul>
