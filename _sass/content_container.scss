@@ -17,6 +17,13 @@
         .content-container-center{
             width: $content_width;
             overflow-y: hidden;
+
+            .page-title{
+                font-family: $header_font_family;
+                font-size: 2rem;
+                color: $highlight_color4;
+                font-weight: 600;
+            }
         }
     }
 
