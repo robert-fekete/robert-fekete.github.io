@@ -1,0 +1,36 @@
+@import 'colors';
+@import 'fonts';
+
+.tags-list{
+
+    padding: 0px;
+    margin: 0px;
+    font-size: 20px;
+
+    li{
+        display: block;
+    }
+
+    .tags-list-title{
+        font-size: 24px;
+        font-family: $header_font_family;
+        margin: 40px 0px 15px 0px;
+    }
+
+    .tags-list-values{
+        padding: 0px 0px 0px 20px;
+        margin: 0px;
+    }
+
+    a{
+        color: $highlight_color3;
+    }
+
+    a:link, a:visited{
+        text-decoration: none;
+    }
+
+    a:hover{
+        text-decoration: underline;
+    }
+}
