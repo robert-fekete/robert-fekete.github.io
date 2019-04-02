@@ -1,0 +1,26 @@
+@import 'colors';
+@import 'fonts';
+
+.archive-list{
+
+    padding: 0px;
+    margin: 0px;
+    font-size: 20px;
+
+    li{
+        display: block;
+        padding-bottom: 5px;
+    }
+
+    a{
+        color: $highlight_color3;
+    }
+
+    a:link, a:visited{
+        text-decoration: none;
+    }
+
+    a:hover{
+        text-decoration: underline;
+    }
+}
