@@ -4,11 +4,13 @@ github_username: robert-fekete
 
 permalink: /:categories/:year/:month/:day/:title/
 show_excerpts: true
+excerpt_separator: "<!--More-->"
 
 markdown: kramdown
 sass:
   style: compressed
 
+
 github_handle: robert-fekete
-twitter_handle: "rofekete"
+twitter_handle: rofekete
 bitbucket_handle: robert-fekete
