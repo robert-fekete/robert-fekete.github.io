@@ -1,19 +1,19 @@
-<div class="header">
-    <h1 class="title">{{ page.title }}<span class="title-author"> by {{ site.author }}</span></h1>
+<div class="post-header">
+    <span class="post-title">{{ page.title }}</span><span class="post-title-author"> by {{ site.author }}</span>
 </div>
 
-<div class="content">
+<div class="post-content">
     {{ content }}
 </div>
 
 <div class="post-meta">
     <div>Posted on {{ page.date | date: "%B %e, %Y" }}</div>
     {% unless page.tags == empty %}
-    <div>Tags: 
+    <div class="post-tags">Tags: 
         
         {% assign sorted_tags = (page.tags | sort) %}
         {% for tag in sorted_tags %}
-            <span class="post-tag">{{ tag }}</span>
+            <a href="/tags/#{{ tag }}"><span class="post-tag">{{ tag }}</span></a>
         {% endfor %}
     </div>
     {% endunless %}

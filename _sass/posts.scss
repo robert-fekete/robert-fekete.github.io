@@ -1,0 +1,51 @@
+@import 'fonts';
+@import 'colors';
+@import 'position';
+
+
+.post-header{
+    font-family: $header_font_family;
+    padding-bottom: 40px;
+
+    .post-title{
+        font-size: 2rem;
+        color: $highlight_color4;
+        font-weight: 600;
+        padding-right: 10px;
+    }
+
+    .post-title-author{
+        font-size: 20px;
+        color: $font_fade_color;
+    }
+}
+
+.post-content{
+    font-size: 20px;
+    text-align: justify;
+}
+
+.post-meta{
+    font-size: 20px;
+
+    .post-tags{
+        padding-top: 10px;
+
+        .post-tag{
+
+            font-family: $header_font_family;
+            padding: 2px 5px 2px 5px;
+            background-color: $highlight_color6;
+        }
+
+        a, a:hover, a:link, a:visited{
+            text-decoration: none;
+            color: $highlight_color2;
+            font-weight: 600;
+        }
+    }
+}
+
+.post-pagination{
+    padding-top: $content_padding;
+}
