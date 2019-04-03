@@ -38,3 +38,30 @@
         }
     }
 }
+
+.index-navigation{
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    
+    padding-bottom: 20px;
+
+    font-size: 20px;
+    font-family: $header_font_family;
+
+    .navigation-element{
+        padding: 0px 10px 0px 10px;
+    }
+
+    .navigation-link{
+        color: $highlight_color3;
+    }
+
+    a, a:visited, a:link{
+        text-decoration: none;
+    }
+
+    a:hover{
+        text-decoration: underline;
+    }
+}

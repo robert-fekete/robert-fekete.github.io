@@ -16,3 +16,25 @@ layout: default
         </li>
     {% endfor %}
 </ul>
+
+{% if paginator.total_pages > 1 %}
+<div class="index-navigation">
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}" class="navigation-link navigation-element">
+        Prev
+    </a>
+    {% else %}
+    <span class="navigation-disabled navigation-element">Prev</span>
+    {% endif %}
+
+    <a href="/archive/" class="navigation-link navigation-element">Archive</a>
+
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}" class="navigation-link navigation-element">
+        Next
+    </a>
+    {% else %}
+    <span class="navigation-disabled navigation-element">Next</span>
+    {% endif %}
+</div>
+{% endif %}
