@@ -3,7 +3,7 @@ layout: default
 ---
 
 <ul class="index-list">
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
         <li class="index-listitem">
             <div class="index-post">
                 <a href="{{ post.url }}" class="nav-link index-post-title">{{ post.title }}</a>

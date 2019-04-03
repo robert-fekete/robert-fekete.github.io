@@ -2,6 +2,9 @@ title: Corner of the Hyper-plane
 author: Robert Fekete
 github_username: robert-fekete
 
+exclude: ["README.md"]
+plugins: [jekyll-paginate]
+
 permalink: /:categories/:year/:month/:day/:title/
 show_excerpts: true
 excerpt_separator: "<!--More-->"
@@ -10,6 +13,8 @@ markdown: kramdown
 sass:
   style: compressed
 
+paginate: 5
+paginate_path: "/page:num"
 
 github_handle: robert-fekete
 twitter_handle: rofekete

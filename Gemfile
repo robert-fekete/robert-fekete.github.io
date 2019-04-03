@@ -8,5 +8,6 @@ gem 'tzinfo', '~> 1.2'
 #gem 'github-pages'
 #gem 'jekyll-lunr-js-search', '~> 3.1'
 gem 'jekyll-sitemap'
+gem "jekyll-paginate"
 #gem 'autoprefixer-rails'
 #gem 'jekyll-assets'
