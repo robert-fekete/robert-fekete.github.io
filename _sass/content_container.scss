@@ -6,13 +6,24 @@
 .body{
     background-color: $color2;
     font-family: $body_font_family;
+    bottom: 0px;
+    margin: 0px;
+    height: 100vh;
+
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: $navbar_width $content_width + 2 * $content_padding;
+    grid-template-rows: [row1-start] auto [row1-end row2-start] 80px [row2-end];
+    grid-template-areas:
+    "sidebar content content"
+    "sidebar  footer  footer";
 
     .content-container{
         color: $font_color;
-        margin: 0px 0px 0px $navbar_width;
-        height: 100%;
+        margin: 0px;
         padding: $content_padding 0px 0px $content_padding;
         top: 0;
+        grid-area: content;
         
         .content-container-center{
             width: $content_width;
@@ -29,9 +40,11 @@
     }
 
     .footer{
-        margin-top: 40px;
         text-align: center;
         font-size: 18px;
         color: $font_fade_color;
+        
+        align-self: end;
+        grid-area: footer;
     }
 }
