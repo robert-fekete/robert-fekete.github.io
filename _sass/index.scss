@@ -9,7 +9,11 @@
         display: inline-block;
         
         .index-post{
-            padding: 0px 0px $content_padding 0px;
+            padding-bottom: 8rem;
+
+            .index-date{
+                padding-bottom: 3rem;
+            }
         }
     }
 }

@@ -4,10 +4,15 @@
 
 
 .post-header{
-    padding-bottom: 40px;
+    padding-bottom: 4rem;
 
     .post-title{
         padding-right: 10px;
+        display: block;
+
+        @include for-tablet-portrait-up{
+            display: inline;
+        }
     }
 }
 

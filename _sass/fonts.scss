@@ -4,55 +4,53 @@
 $body_font_family: 'Nunito Sans', sans-serif;
 $header_font_family: 'Montserrat', sans-serif;
 
-// Hand-held
-$hh_large_font: 2.0rem;
-$hh_medium_font: 1.5rem;
-$hh_small_font: 1.0rem;
-
-// Large screen
-$ls_large_font: 3.0rem;
-$ls_medium_font: 2.5rem;
-$ls_small_font: 2.0rem;
+$large_font: 3.0rem;
+$medium_font: 2.5rem;
+$small_font: 2.0rem;
 
 $bold_weight: 600;
 $normal_weight: 500;
 
 html{
-    font-size: 62.5%;
+
+    font-size: 36%;
+
+    @include for-phone-up{
+        font-size: 45%;
+    }
+
+    @include for-tablet-portrait-up{
+        font-size: 55%;
+    }
+
+    @include for-tablet-landscape-up {
+        font-size: 62.5%;
+    }
+
+    @include for-desktop-up {
+        font-size: 70%;
+    }
 }
 
 // Navbar fonts
 .menu-items{
     color: $font_color;
     font-family: $header_font_family;
-    font-size: $hh_medium_font;
-
-    @include for-tablet-landscape-up{
-        font-size: $ls_medium_font;
-    }
+    font-size: $medium_font;
 }
 
 .handle{
     color: $font_color;
     font-family: $header_font_family;
-    font-size: $hh_small_font;
-
-    @include for-tablet-landscape-up{
-        font-size: $ls_small_font;
-    }
-
+    font-size: $small_font;
     display: block;
 }
 
 %title-shared{
     font-family: $header_font_family;
     color: $highlight_color4;
+    font-size: $large_font;
     font-weight: $bold_weight;
-    font-size: $hh_large_font;
-
-    @include for-tablet-landscape-up{
-        font-size: $ls_large_font;
-    }
 }
 
 .logo{
@@ -67,48 +65,33 @@ html{
 
 .header{ /* only used with tags view, is this the right style? same style as menu items but different meaning*/
     font-family: $header_font_family;
+    font-size: $medium_font;
     color: $font_color;
-    font-size: $hh_medium_font;
-
-    @include for-tablet-landscape-up{
-        font-size: $ls_medium_font;
-    }
 }
 
 .faded-header {
     font-family: $header_font_family;
     color: $font_fade_color;
-    font-size: $hh_small_font;
-
-    @include for-tablet-landscape-up{
-        font-size: $ls_small_font;
-    }
+    font-size: $small_font;
 }
 
 .faded-color-header{
     font-family: $header_font_family;
     color: $highlight_color5;
-    font-size: $hh_small_font;
-
-    @include for-tablet-landscape-up{
-        font-size: $ls_small_font;
-    }
+    font-size: $small_font;
 }
 
 // Body
 %body-shared{
     font-family:  $body_font_family;
     color: $font_color;
-    font-size: $hh_small_font;
-
-    @include for-tablet-landscape-up{
-        font-size: $ls_small_font;
-    }
+    font-size: $small_font;
 }
 
 .body-text{
     @extend %body-shared;
     text-align: justify;
+    line-height: 1.3;
 }
 
 .faded-body-text{
@@ -125,11 +108,7 @@ html{
 // Index
 .pagination{
     @extend %title-shared;
-    font-size: $hh_small_font;
-
-    @include for-tablet-landscape-up{
-        font-size: $ls_small_font;
-    }
+    font-size: $small_font;
 }
 
 .enabled.pagination{
@@ -145,9 +124,5 @@ html{
     font-family: $header_font_family;
     font-variant: small-caps;
     font-weight: $bold_weight;
-    font-size: $hh_medium_font;
-
-    @include for-tablet-landscape-up{
-        font-size: $ls_medium_font;
-    }
+    font-size: $medium_font;
 }

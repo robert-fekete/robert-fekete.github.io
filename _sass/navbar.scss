@@ -3,7 +3,7 @@
 @import 'links';
 @import 'fonts';
 
-$padding_size: 25px;
+$padding_size: 3rem;
 
 .navbar-container{
     background-color: $color1;
@@ -13,45 +13,43 @@ $padding_size: 25px;
     width: 100%;
     height: auto;
     
+    padding: 15px;
+    
     @include for-tablet-landscape-up{
         position: fixed;
-
-        width: $navbar_width;
+        
+        width: $navbar_width - 2 * $padding_size;
         height: 100%;
+        
+        padding: $padding_size;
+    }
+
+    .navbar-title{
+
+        @include for-tablet-landscape-up{
+            padding-bottom: $padding_size;
+        }
+        
+        .navbar-title-firstline{
+            text-align: left;
+            display: inline;
+            
+            @include for-tablet-landscape-up{
+                display: block;
+            }
+        }
+        .navbar-title-secondline{
+            text-align: right;
+            display: inline;
+            
+            @include for-tablet-landscape-up{
+                display: block;
+            }
+        }
     }
     
     .navbar-nav{
         width: auto;
-
-        padding: 15px;
-
-        @include for-tablet-landscape-up{
-            padding: $padding_size;
-        }
-
-        .navbar-title{
-
-            @include for-tablet-landscape-up{
-                padding-bottom: $padding_size;
-            }
-            
-            .navbar-title-firstline{
-                text-align: left;
-                display: inline;
-                
-                @include for-tablet-landscape-up{
-                    display: block;
-                }
-            }
-            .navbar-title-secondline{
-                text-align: right;
-                display: inline;
-                
-                @include for-tablet-landscape-up{
-                    display: block;
-                }
-            }
-        }
 
         ul{
             padding: $padding_size 0px 0px 0px;
