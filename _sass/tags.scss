@@ -1,11 +1,11 @@
 @import 'colors';
 @import 'fonts';
+@import 'links';
 
 .tags-list{
 
     padding: 0px;
     margin: 0px;
-    font-size: 20px;
 
     li{
         display: block;
@@ -16,26 +16,12 @@
         padding-bottom: 40px;
 
         .tags-list-title{
-            font-size: 24px;
-            font-family: $header_font_family;
             margin-bottom: 15px;
         }
 
         .tags-list-values{
             padding-left: 20px;
             margin: 0px;
-        }
-
-        a{
-            color: $highlight_color3;
-        }
-
-        a:link, a:visited{
-            text-decoration: none;
-        }
-
-        a:hover{
-            text-decoration: underline;
         }
     }
 }

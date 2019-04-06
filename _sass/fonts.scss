@@ -3,10 +3,6 @@
 $body_font_family: 'Nunito Sans', sans-serif;
 $header_font_family: 'Montserrat', sans-serif;
 
-.hard-link{
-    color: $highlight_color3;
-}
-
 .menu-items{
     color: $font_color;
     font-family: $header_font_family;
@@ -20,7 +16,7 @@ $header_font_family: 'Montserrat', sans-serif;
     display: block;
 }
 
-%header-shared{
+%title-shared{
     font-family: $header_font_family;
     color: $highlight_color4;
     font-size: 2rem;
@@ -28,21 +24,31 @@ $header_font_family: 'Montserrat', sans-serif;
 }
 
 .logo{
-    @extend %header-shared;
+    @extend %title-shared;
     font-weight: 500;
-    font-size: 30px;
 }
 
-.header{
-    @extend %header-shared;
+.title{
+    @extend %title-shared;
+}
+
+.header{ /* only used with tags, is this the right style? same style as menu items but different meaning*/
+    font-family: $header_font_family;
+    font-size: 25px;
+    color: $font_color;
 }
 
 %body-shared{
     font-family:  $body_font_family;
     color: $font_color;
+    font-size: 20px;
 }
 
 .body-text{
     @extend %body-shared;
-    font-size: 20px;
+}
+
+.hard-link{
+    @extend %body-shared;
+    color: $highlight_color3;
 }
