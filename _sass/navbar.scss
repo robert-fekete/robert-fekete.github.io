@@ -4,7 +4,11 @@
 
 .navbar-container{
     
+    position: fixed;
     grid-area: sidebar;
+    width: $navbar_width;
+    height: 100vh;
+    
     font-size: 25px;
     color: $font_color;
     background-color: $color1;
