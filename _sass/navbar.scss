@@ -12,8 +12,6 @@ $padding_size: 25px;
     width: $navbar_width;
     height: 100vh;
     
-    font-size: 25px;
-    color: $font_color;
     background-color: $color1;
     
     
@@ -46,7 +44,7 @@ $padding_size: 25px;
         .navbar-handles{
 
             .navbar-handles-handle{
-                color: $highlight_color1;
+                color: $highlight_color3;
             }
         }
     }
