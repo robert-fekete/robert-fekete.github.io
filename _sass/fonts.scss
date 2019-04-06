@@ -96,16 +96,10 @@ $normal_weight: 500;
     color: $font_color;
 }
 
-// Post tag format, ugly as hell
+// // Post tag format, ugly (as hell)
 .post-tag{
-
     font-family: $header_font_family;
-    padding: 2px 5px 2px 5px;
-    background-color: $highlight_color6;
-}
-
-a.post-tag-link, a.post-tag-link:hover, a.post-tag-link:link, a.post-tag-link:visited{
-    text-decoration: none;
-    color: $highlight_color2;
+    font-variant: small-caps;
     font-weight: $bold_weight;
+    font-size: $medium_font;
 }

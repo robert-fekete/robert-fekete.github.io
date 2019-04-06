@@ -13,7 +13,7 @@
         
         {% assign sorted_tags = (page.tags | sort) %}
         {% for tag in sorted_tags %}
-            <a href="/tags/#{{ tag }}" class="post-tag-link"><span class="post-tag">{{ tag }}</span></a>
+            <a href="/tags/#{{ tag }}" class="hard-link post-tag">{{ tag }}</a>
         {% endfor %}
     </div>
     {% endunless %}
