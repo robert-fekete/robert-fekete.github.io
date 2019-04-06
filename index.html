@@ -7,7 +7,7 @@ title: Corner of the Hyperspace
     {% for post in paginator.posts %}
         <li class="index-listitem">
             <div class="index-post">
-                <a href="{{ post.url }}" class="nav-link index-post-title">{{ post.title }}</a>
+                <a href="{{ post.url }}" class="index-post-title">{{ post.title }}</a>
                 <div class="index-post-date">Posted on {{ post.date | date: "%B %e, %Y" }}</div>
                 <div class="index-post-excerpt">{{ post.excerpt }}</div>
                 <a href="{{ post.url }}" class="index-post-more">

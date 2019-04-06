@@ -1,23 +1,18 @@
 @import 'colors';
 @import 'fonts';
 
-a.nav-link{
-    color: $font_color;
-    font-family: $header_font_family;
-}
-
-a.nav-link:link{
+a:link{
     text-decoration: none;
 }
 
-a.nav-link:visited{
+a:visited{
     text-decoration: none !important;
 }
 
-a.nav-link:hover{
+a:hover{
     text-decoration: underline;
 }
 
-a.nav-link.no-decor{
+a.no-decor{
     text-decoration: none !important;
 }

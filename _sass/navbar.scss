@@ -1,6 +1,9 @@
 @import 'colors';
 @import 'position';
 @import 'links';
+@import 'fonts';
+
+$padding_size: 25px;
 
 .navbar-container{
     
@@ -17,18 +20,11 @@
     .navbar-nav{
         width: auto;
 
-        $padding_size: 25px;
         padding: $padding_size;
 
         .navbar-title{
-            font-size: 30px;
-            font-weight: 500;
             padding-bottom: $padding_size;
             
-            .nav-link{
-                color: $highlight_color4;
-            }
-
             .navbar-title-firstline{
                 text-align: left;
             }
@@ -48,8 +44,7 @@
         }
 
         .navbar-handles{
-            font-size: 20px;
-            
+
             .navbar-handles-handle{
                 color: $highlight_color1;
             }
