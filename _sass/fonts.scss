@@ -58,6 +58,26 @@ $header_font_family: 'Montserrat', sans-serif;
     color: $highlight_color3;
 }
 
+// Index
+.faded-color-header{
+    font-family: $header_font_family;
+    color: $highlight_color5;
+    font-size: 20px;
+}
+
+.pagination{
+    @extend %title-shared;
+    font-size: 20px;
+}
+
+.enabled.pagination{
+    color: $highlight_color3;
+}
+
+.disabled.pagination{
+    color: $font_color;
+}
+
 // Posts
 .faded-header {
     font-family: $header_font_family;

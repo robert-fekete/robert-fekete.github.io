@@ -7,10 +7,10 @@ title: Corner of the Hyperspace
     {% for post in paginator.posts %}
         <li class="index-listitem">
             <div class="index-post">
-                <a href="{{ post.url }}" class="index-post-title">{{ post.title }}</a>
-                <div class="index-post-date">Posted on {{ post.date | date: "%B %e, %Y" }}</div>
-                <div class="index-post-excerpt">{{ post.excerpt }}</div>
-                <a href="{{ post.url }}" class="index-post-more">
+                <a href="{{ post.url }}" class="title">{{ post.title }}</a>
+                <div class="faded-color-header">Posted on {{ post.date | date: "%B %e, %Y" }}</div>
+                <div class="body-text">{{ post.excerpt }}</div>
+                <a href="{{ post.url }}" class="hard-link">
                     More...
                 </a>
             </div>
@@ -21,21 +21,21 @@ title: Corner of the Hyperspace
 {% if paginator.total_pages > 1 %}
 <div class="index-navigation">
     {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | relative_url }}" class="navigation-link navigation-element">
+    <a href="{{ paginator.next_page_path | relative_url }}" class="enabled pagination">
         Prev
     </a>
     {% else %}
-    <span class="navigation-disabled navigation-element">Prev</span>
+    <span class="disabled pagination">Prev</span>
     {% endif %}
 
-    <a href="/archive/" class="navigation-link navigation-element">Archive</a>
+    <a href="/archive/" class="enabled pagination">Archive</a>
 
     {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url }}" class="navigation-link navigation-element">
+    <a href="{{ paginator.previous_page_path | relative_url }}" class="enabled pagination">
         Next
     </a>
     {% else %}
-    <span class="navigation-disabled navigation-element">Next</span>
+    <span class="disabled pagination">Next</span>
     {% endif %}
 </div>
 {% endif %}
