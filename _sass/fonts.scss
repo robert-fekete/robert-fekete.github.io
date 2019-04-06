@@ -3,12 +3,16 @@
 $body_font_family: 'Nunito Sans', sans-serif;
 $header_font_family: 'Montserrat', sans-serif;
 
-$large_font: 30px;
-$medium_font: 25px;
-$small_font: 20px;
+$large_font: 3.0rem;
+$medium_font: 2.5rem;
+$small_font: 2.0rem;
 
 $bold_weight: 600;
 $normal_weight: 500;
+
+html{
+    font-size: 62.5%;
+}
 
 // Navbar fonts
 .menu-items{
