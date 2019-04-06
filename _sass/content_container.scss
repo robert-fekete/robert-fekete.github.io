@@ -19,7 +19,6 @@ body{
     "sidebar  footer";
 
     .content-container{
-        color: $font_color;
         margin: 0px;
         padding: $content_padding 0px 0px $content_padding;
         top: 0;
@@ -30,10 +29,6 @@ body{
             overflow-y: hidden;
 
             .page-title{
-                font-family: $header_font_family;
-                font-size: 2rem;
-                color: $highlight_color4;
-                font-weight: 600;
                 padding-bottom: 40px;
             }
         }
@@ -41,9 +36,7 @@ body{
 
     .footer{
         text-align: center;
-        font-size: 18px;
-        color: $font_fade_color;
-        
+                
         padding-top: $footer_padding;
 
         align-self: end;

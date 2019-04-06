@@ -40,6 +40,17 @@ $header_font_family: 'Montserrat', sans-serif;
     color: $font_color;
 }
 
+.faded-header {
+    font-family: $header_font_family;
+    color: $font_fade_color;
+    font-size: 20px;
+}
+
+.faded-color-header{
+    font-family: $header_font_family;
+    color: $highlight_color5;
+    font-size: 20px;
+}
 
 // Body
 %body-shared{
@@ -53,18 +64,18 @@ $header_font_family: 'Montserrat', sans-serif;
     text-align: justify;
 }
 
+.faded-body-text{
+    @extend %body-shared;
+    color: $font_fade_color;
+    text-align: justify;
+}
+
 .hard-link{
     @extend %body-shared;
     color: $highlight_color3;
 }
 
 // Index
-.faded-color-header{
-    font-family: $header_font_family;
-    color: $highlight_color5;
-    font-size: 20px;
-}
-
 .pagination{
     @extend %title-shared;
     font-size: 20px;
@@ -76,13 +87,6 @@ $header_font_family: 'Montserrat', sans-serif;
 
 .disabled.pagination{
     color: $font_color;
-}
-
-// Posts
-.faded-header {
-    font-family: $header_font_family;
-    color: $font_fade_color;
-    font-size: 20px;
 }
 
 // Post tag format, ugly as hell
