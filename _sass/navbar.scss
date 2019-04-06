@@ -1,33 +1,55 @@
 @import 'colors';
-@import 'position';
+@import 'layout';
 @import 'links';
 @import 'fonts';
 
 $padding_size: 25px;
 
 .navbar-container{
-    
-    position: fixed;
-    grid-area: sidebar;
-    width: $navbar_width;
-    height: 100vh;
-    
     background-color: $color1;
     
+    grid-area: sidebar;
+    
+    width: 100%;
+    height: auto;
+    
+    @include for-tablet-landscape-up{
+        position: fixed;
+
+        width: $navbar_width;
+        height: 100%;
+    }
     
     .navbar-nav{
         width: auto;
 
-        padding: $padding_size;
+        padding: 15px;
+
+        @include for-tablet-landscape-up{
+            padding: $padding_size;
+        }
 
         .navbar-title{
-            padding-bottom: $padding_size;
+
+            @include for-tablet-landscape-up{
+                padding-bottom: $padding_size;
+            }
             
             .navbar-title-firstline{
                 text-align: left;
+                display: inline;
+                
+                @include for-tablet-landscape-up{
+                    display: block;
+                }
             }
             .navbar-title-secondline{
                 text-align: right;
+                display: inline;
+                
+                @include for-tablet-landscape-up{
+                    display: block;
+                }
             }
         }
 
@@ -41,7 +63,19 @@ $padding_size: 25px;
             padding: 5px 5px 5px 5px;
         }
 
+        .navbar-menu-items{
+            display: none;
+            @include for-tablet-landscape-up{
+                display: block;
+            }
+        }
+
         .navbar-handles{
+            display: none;
+
+            @include for-tablet-landscape-up{
+                display: block;
+            }
 
             .navbar-handles-handle{
                 color: $highlight_color3;

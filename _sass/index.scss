@@ -1,5 +1,5 @@
 @import 'colors';
-@import 'position';
+@import 'layout';
 
 .index-list{
     padding: 0px;
@@ -9,7 +9,7 @@
         display: inline-block;
         
         .index-post{
-            padding: 0px 0px $content_padding 20px;
+            padding: 0px 0px $content_padding 0px;
         }
     }
 }
@@ -19,7 +19,10 @@
     margin-right: auto;
     width: fit-content;
     
-    padding-bottom: 20px;
+    padding-bottom: 0px;
+    @include for-tablet-landscape-up{
+        padding-bottom: 20px;
+    }
 
     .pagination{
         padding: 0px 10px 0px 10px;

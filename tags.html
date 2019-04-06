@@ -11,7 +11,7 @@ title: Tags
                 <div id="{{ tag[0] }}" class="header tags-list-title">{{ tag[0] }}</div>
                 <ul class="tags-list-values">
                     {% for post in tag[1] %}
-                        <li><a href="{{ post.url }}" class="hard-link">{{ post.title }}</a></li>
+                        <li><a href="{{ post.url }}" class="hard-link">{{post.date | date: "%Y-%m-%d"}} : {{ post.title }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
