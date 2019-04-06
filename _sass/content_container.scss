@@ -13,7 +13,7 @@ body{
     display: grid;
     grid-gap: 0px;
     grid-template-columns: $navbar_width $content_width + 2 * $content_padding;
-    grid-template-rows: [row1-start] auto [row1-end row2-start] 80px [row2-end];
+    grid-template-rows: [row1-start] auto [row1-end row2-start] auto [row2-end];
     grid-template-areas:
     "sidebar content"
     "sidebar  footer";
@@ -44,6 +44,8 @@ body{
         font-size: 18px;
         color: $font_fade_color;
         
+        padding-top: $footer_padding;
+
         align-self: end;
         grid-area: footer;
     }
