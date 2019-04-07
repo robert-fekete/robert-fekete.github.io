@@ -4,6 +4,7 @@ github_username: robert-fekete
 
 exclude: ["README.md"]
 plugins: [jekyll-paginate]
+host: 0.0.0.0
 
 permalink: /:categories/:year/:month/:day/:title/
 show_excerpts: true
