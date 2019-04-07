@@ -18,4 +18,45 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+
+    <script>
+        function closeMenu(event){
+            
+            setMenuDisplayMode(function(menu){
+
+                menu.style.display = "none";
+            });
+
+            event.stopPropagation();
+        }
+        function toggleMenu(event){
+
+            setMenuDisplayMode(function(menu){
+
+                if(menu.style.display === "block"){
+                    menu.style.display = "none";
+                }
+                else{
+                    menu.style.display = "block";
+                }
+            });
+
+            event.stopPropagation();
+        }
+        function setMenuDisplayMode(lambda){
+            var mediaQuery = window.matchMedia("(max-width: 969px)");
+            if (mediaQuery.matches){
+                var menu = document.getElementById("navbar-menu-items");
+                if (menu === null){
+                    console.log("Can't find menu element.");
+                    return;
+                }
+
+                lambda(menu);
+            }
+            else{
+                console.log("Setting menu display mode while in desktop mode.");
+            }
+        }
+    </script>
 </head>

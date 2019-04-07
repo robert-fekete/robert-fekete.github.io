@@ -12,7 +12,7 @@ $padding_size: 3rem;
     
     height: auto;
     
-    padding: 15px;
+    padding: 10px;
     
     @include for-tablet-landscape-up{
         position: fixed;
@@ -24,6 +24,11 @@ $padding_size: 3rem;
     }
 
     .navbar-title{
+        text-align: left !important;
+        width: fit-content;
+        float: left;
+        display: inline;
+        padding: 5px;
 
         @include for-tablet-landscape-up{
             padding-bottom: $padding_size;
@@ -49,6 +54,7 @@ $padding_size: 3rem;
     
     .navbar-nav{
         width: auto;
+        clear:left;
 
         ul{
             padding: $padding_size 0px 0px 0px;
@@ -77,6 +83,35 @@ $padding_size: 3rem;
             .navbar-handles-handle{
                 color: $highlight_color3;
             }
+        }
+    }
+
+    .navbar-hamburger{
+        display: inline-block;
+        float: right;
+        cursor: pointer;
+        
+        height: 5rem;
+        width: 5rem;
+
+        @include for-tablet-landscape-up{
+            display: none;
+        }
+
+        .top-bun, .burger, .bottom-bun{
+
+            margin-top: 0.75rem;
+            margin-left: 0.75rem;
+            margin-right: 0.75rem;
+
+            display: block;
+            height: 0.5rem;
+            width: 3.5rem;
+            background-color: $font_fade_color;
+        }
+
+        .top-bun{
+            margin-top: 0.875rem;
         }
     }
 }

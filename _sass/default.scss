@@ -45,6 +45,7 @@ body{
         grid-area: content;
         margin: 0px;
         padding: 20px;
+        min-width: 35rem;
         
         @include for-tablet-landscape-up{
             padding-top: $content_padding;
@@ -74,6 +75,10 @@ body{
         
             @include for-desktop-up {
                 max-width: 65rem;
+            }
+        
+            @include for-desktop-wide-up {
+                width: 65rem;
             }
 
             .page-title{
