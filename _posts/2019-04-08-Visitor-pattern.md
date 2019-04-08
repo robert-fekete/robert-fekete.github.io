@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-04-07
+date: 2019-04-08
 title: Visitor pattern
 tags: ["Visitor&nbsp;pattern", "Design&nbsp;patterns", "Software&nbsp;design", "Object&nbsp;oriented&nbsp;programming"]
 ---
