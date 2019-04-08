@@ -21,20 +21,20 @@ The Visitor pattern enables us to call different functions based on the run-time
 <?xml version="1.0" encoding="utf-8" ?>
 <config>
   <site>
-    <host>
-      192.168.0.1
-    </host>
-    <host>
-      192.168.0.2
-    </host>
-    <host>
-      192.168.0.3
-    </host>
+	<host>
+	  192.168.0.1
+	</host>
+	<host>
+	  192.168.0.2
+	</host>
+	<host>
+	  192.168.0.3
+	</host>
   </site>
   <site>
-    <host>
-      10.0.0.1
-    </host>
+	<host>
+	  10.0.0.1
+	</host>
   </site>
 </config>
 ```
@@ -45,9 +45,9 @@ We would like to detect is a closing element is missing. So something like below
 <?xml version="1.0" encoding="utf-8" ?>
 <config>
   <site>
-    <host>
-      10.0.0.1
-    <!-- Missing closing host element-->
+	<host>
+	  10.0.0.1
+	<!-- Missing closing host element-->
   </site>
 </config>
 ~~~
@@ -61,9 +61,9 @@ The Visitor patterns key element is a Visitor class. The visitor class has a `Vi
 ~~~ csharp
 internal interface IXmlVisitor
 {
-    void Visit(StartingElement element);
-    void Visit(EndElement end);
-    void Visit(InnerText text);
+	void Visit(StartingElement element);
+	void Visit(EndElement end);
+	void Visit(InnerText text);
 }
 ~~~
 
@@ -72,47 +72,47 @@ By calling the `Visit` function with the nodes during the iteration, the matchin
 ~~~ csharp
 internal class StartingElement : IXmlNode
 {
-    public StartingElement(string tag)
-    {
-        Tag = tag;
-    }
+	public StartingElement(string tag)
+	{
+		Tag = tag;
+	}
 
-    public string Tag { get; }
+	public string Tag { get; }
 
-    public void Accept(IXmlVisitor visitor)
-    {
-        visitor.Visit(this);
-    }
+	public void Accept(IXmlVisitor visitor)
+	{
+		visitor.Visit(this);
+	}
 }
 
 internal class EndElement : IXmlNode
 {
-    public EndElement(string tag)
-    {
-        Tag = tag;
-    }
+	public EndElement(string tag)
+	{
+		Tag = tag;
+	}
 
-    public string Tag { get; }
+	public string Tag { get; }
 
-    public void Accept(IXmlVisitor visitor)
-    {
-        visitor.Visit(this);
-    }
+	public void Accept(IXmlVisitor visitor)
+	{
+		visitor.Visit(this);
+	}
 }
 
 internal class InnerText : IXmlNode
 {
-    public InnerText(string value)
-    {
-        this.Value = value;
-    }
+	public InnerText(string value)
+	{
+		this.Value = value;
+	}
 
-    public string Value { get; }
+	public string Value { get; }
 
-    public void Accept(IXmlVisitor visitor)
-    {
-        visitor.Visit(this);
-    }
+	public void Accept(IXmlVisitor visitor)
+	{
+		visitor.Visit(this);
+	}
 }
 ~~~
 
@@ -126,7 +126,7 @@ IEnumerable<IXmlNode> xmlStream = …; // We need to load the XML document
 IXmlVisitor visitor = …; // We need a visitor
 foreach(var node in xmlStream)
 {
-    node.Accept(visitor);
+	node.Accept(visitor);
 }
 ~~~
 
@@ -141,25 +141,25 @@ Let's see the main guest of our event, an actual Visitor implementation.
 ~~~ csharp
 internal class XmlValidatorVisitor : IXmlVisitor
 {
-    private int elements = 0;
-    private int endEmelents = 0;
+	private int elements = 0;
+	private int endEmelents = 0;
 
-    public bool IsValid => elements == endEmelents;
+	public bool IsValid => elements == endEmelents;
 
-    public void Visit(StartingElement element)
-    {
-        elements++;
-    }
+	public void Visit(StartingElement element)
+	{
+		elements++;
+	}
 
-    public void Visit(EndElement end)
-    {
-        endEmelents++;
-    }
+	public void Visit(EndElement end)
+	{
+		endEmelents++;
+	}
 
-    public void Visit(InnerText text)
-    {
-        // No op
-    }
+	public void Visit(InnerText text)
+	{
+		// No op
+	}
 }
 ~~~
 
@@ -168,26 +168,26 @@ The code is clear and simple, we only see what's relevant for us. We wanted a va
 ~~~ csharp
 internal class CollectingHostAddressVisitor : IXmlVisitor
 {
-    public List<string> Result { get; } = new List<string>();
-    public bool saveText = false;
+	public List<string> Result { get; } = new List<string>();
+	public bool saveText = false;
 
-    public void Visit(StartingElement element)
-    {
-        if (element.Tag == "host")
-        {
-            saveText = true;
-        }
-    }
+	public void Visit(StartingElement element)
+	{
+		if (element.Tag == "host")
+		{
+			saveText = true;
+		}
+	}
 
-    public void Visit(EndElement end)
-    {
-        saveText = false;
-    }
+	public void Visit(EndElement end)
+	{
+		saveText = false;
+	}
 
-    public void Visit(InnerText text)
-    {
-        Result.Add(text.Value);
-    }
+	public void Visit(InnerText text)
+	{
+		Result.Add(text.Value);
+	}
 }
 ~~~
 
@@ -198,40 +198,40 @@ Okay, so I said "the Visitor pattern enables us to call different functions base
 ~~~ csharp
 internal class Developer : IEmployee
 {
-    public Developer(string name)
-    {
-        this.DisplayName = name;
-    }
+	public Developer(string name)
+	{
+		this.DisplayName = name;
+	}
 
-    public string DisplayName { get; }
+	public string DisplayName { get; }
 
-    public void DoWork()
-    {
-        // Coding
-    }
+	public void DoWork()
+	{
+		// Coding
+	}
 }
 
 internal class Manager : IEmployee
 {
-    private readonly string name;
+	private readonly string name;
 
-    public Manager(string name)
-    {
-        this.name = name;
-    }
-    public string DisplayName => "Sir. " + name;
+	public Manager(string name)
+	{
+		this.name = name;
+	}
+	public string DisplayName => "Sir. " + name;
 
-    public void DoWork()
-    {
-        // Managing
-    }
+	public void DoWork()
+	{
+		// Managing
+	}
 }
 
 IEnumerable<IEmployee> employees = …; // We need some employees
 foreach(var employee in employees)
 {
-    SayHi(employee.DisplayName);
-    employee.DoWork();
+	SayHi(employee.DisplayName);
+	employee.DoWork();
 }
 ~~~
 
@@ -246,35 +246,35 @@ So, it seems like we have two tools to solve a very similar problem. How can I d
 ~~~ csharp
 internal class Manager : IEmployee
 {
-    public Manager(string name)
-    {
-        Name = name;
-    }
+	public Manager(string name)
+	{
+		Name = name;
+	}
 
-    public string Name { get; set; }
+	public string Name { get; set; }
 
-    public string Accept(IDisplayNameVisitor visitor)
-    {
-        return visitor.Visit(this);
-    }
+	public string Accept(IDisplayNameVisitor visitor)
+	{
+		return visitor.Visit(this);
+	}
 
-    public void Accept(IDoWorkVisitor visitor)
-    {
-        visitor.Visit(this);
-    }
+	public void Accept(IDoWorkVisitor visitor)
+	{
+		visitor.Visit(this);
+	}
 }
 
 internal class DisplayNameVisitor : IDisplayNameVisitor
 {
-    public string Visit(Developer developer)
-    {
-        return developer.Name;
-    }
+	public string Visit(Developer developer)
+	{
+		return developer.Name;
+	}
 
-    public string Visit(Manager manager)
-    {
-        return "Sir. " + manager.Name;
-    }
+	public string Visit(Manager manager)
+	{
+		return "Sir. " + manager.Name;
+	}
 }
 ~~~
 
@@ -287,40 +287,40 @@ Why use the Visitor pattern for the XML parser, if we could just use polymorphis
 ~~~ csharp
 internal interface IXmlNode
 {
-    void Mark();
+	void Mark();
 }
 
 internal class StartingElement : IXmlNode
 {
-    public static int Count = 0;
+	public static int Count = 0;
 
-    public StartingElement(string tag)
-    {
-        Tag = tag;
-    }
+	public StartingElement(string tag)
+	{
+		Tag = tag;
+	}
 
-    public string Tag { get; }
-    
-    public void Mark()
-    {
-        Count++;
-    }
+	public string Tag { get; }
+	
+	public void Mark()
+	{
+		Count++;
+	}
 }
 
 internal class EndElement : IXmlNode
 {
-    public static int Count = 0;
-    public EndElement(string tag)
-    {
-        Tag = tag;
-    }
+	public static int Count = 0;
+	public EndElement(string tag)
+	{
+		Tag = tag;
+	}
 
-    public string Tag { get; }
-    
-    public void Mark()
-    {
-        Count++;
-    }
+	public string Tag { get; }
+	
+	public void Mark()
+	{
+		Count++;
+	}
 }
 
 
@@ -330,7 +330,7 @@ StartingElement.Count = 0;
 EndElement.Count = 0;
 foreach (var node in xmlStream)
 {
-    node.Mark();
+	node.Mark();
 }
 
 var isValid = StartingElement.Count == EndElement.Count;
@@ -358,28 +358,28 @@ We want to have some reports of the employees. Nothing fancy, just calculating t
 ~~~ csharp
 internal class EmployeeReportGeneratingVisitor : IEmployeeVisitor
 {
-    private int developers = 0;
-    private int managers = 0; 
+	private int developers = 0;
+	private int managers = 0; 
 
-    public float Ratio => ((float) managers) / developers;
+	public float Ratio => ((float) managers) / developers;
 
-    public void Visit(Developer developer)
-    {
-        developers++;
-    }
+	public void Visit(Developer developer)
+	{
+		developers++;
+	}
 
-    public void Visit(Manager manager)
-    {
-        managers++;
-    }
+	public void Visit(Manager manager)
+	{
+		managers++;
+	}
 }
 
 var visitor = new EmployeeReportGeneratingVisitor();
 foreach(var employee in employees)
 {
-    SayHi(employee.DisplayName);
-    employee.DoWork();
-    employee.Accept(visitor);
+	SayHi(employee.DisplayName);
+	employee.DoWork();
+	employee.Accept(visitor);
 }
 
 Console.WriteLine($"Ratio: {visitor.Ratio}");
@@ -407,25 +407,24 @@ Let's say you want to calculate the average number of methods you have in your c
 ~~~ csharp
 internal class AverageMethodCalculator : CSharpSyntaxWalker
 {
-  private readonly List<int> methodsPerClass = new List<int>();
-  private int currentCount = 0;
-  public float Result => 
-              ((float)methodsPerClass.Sum()) / methodsPerClass.Count;
+	private readonly List<int> methodsPerClass = new List<int>();
+	private int currentCount = 0;
+	public float Result => 
+			((float)methodsPerClass.Sum()) / methodsPerClass.Count;
 
-  public override void VisitClassDeclaration(ClassDeclarationSyntax n)
-  {
-    base.VisitClassDeclaration(n);
+	public override void VisitClassDeclaration(ClassDeclarationSyntax n)
+	{
+		base.VisitClassDeclaration(n);
+		methodsPerClass.Add(currentCount);
+		currentCount = 0;
+	}
 
-    methodsPerClass.Add(currentCount);
-    currentCount = 0;
-  }
+	public override void VisitMethodDeclaration(MethodDeclarationSyntax n)
+	{
+		base.VisitMethodDeclaration(n);
 
-  public override void VisitMethodDeclaration(MethodDeclarationSyntax n)
-  {
-    base.VisitMethodDeclaration(n);
-
-    currentCount++;
-  }
+		currentCount++;
+	}
 }
 ~~~
 
