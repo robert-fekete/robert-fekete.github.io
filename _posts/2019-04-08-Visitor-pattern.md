@@ -5,7 +5,11 @@ title: Visitor pattern
 tags: ["Visitor&nbsp;pattern", "Design&nbsp;patterns", "Software&nbsp;design", "Object&nbsp;oriented&nbsp;programming"]
 ---
 
-There is a lot of resource on the internet about design patterns and Visitor in particular. So, why am I writing a post about it? (xkcd ?) My main pet peeve (goof, problem) about the ones floating on the internet is that they are missing the main point which is describing when to use them. The existing posts describe what the pattern is, they throw in a confusing UML diagram and then provide some code examples. Some code examples are on the right track, but they usually just blurb (print) some lines out without real behavior. Other examples are just completely unfit to demonstrate the pattern.  They even miss some components from the aforementioned UML diagram. 
+There is a lot of resource on the internet about design patterns and Visitor in particular. So, why am I writing a post about it? 
+
+[![xkcd Standards](https://imgs.xkcd.com/comics/standards.png)](https://xkcd.com/927/)
+
+My main pet peeve about the ones floating on the internet is that they are missing the main point which is describing when to use them. The existing posts describe what the pattern is, they throw in a confusing UML diagram and then provide some code examples. Some code examples are on the right track, but they usually just blurb some lines out without real behavior. Other examples are just completely unfit to demonstrate the pattern.  They even miss some components from the aforementioned UML diagram. 
 
 Printing out some output is enough to show in which order different methods are called, but it ignores the key part. The behavior. The main reason to use a pattern is how your classes behave or how you want them to behave. One of the main design patterns categories is actually called "Behavioral patterns" for this very reason. Even though you have classes called ShoppingCart, Item, Book and Fruit, they could represent completely different things in your business domain. You don't use Visitor, because you have classes with similar names. You use Visitor, because how these classes interact with each other. 
 
