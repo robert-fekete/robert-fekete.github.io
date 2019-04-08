@@ -8,7 +8,7 @@ host: 0.0.0.0
 
 permalink: /:categories/:year/:month/:day/:title/
 show_excerpts: true
-excerpt_separator: "<!--More-->"
+excerpt_separator: "<!-- More -->"
 
 markdown: kramdown
 sass:
