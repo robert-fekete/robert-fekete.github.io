@@ -16,8 +16,16 @@
     }
 }
 
+.post-content{
+    pre{
+        overflow-x: hidden;
+        tab-size: 2;
+    }
+}
+
 .post-tags{
     padding-top: 10px;
+    text-align: left;
 
     .post-tag{
         padding: 2px 5px 2px 5px;

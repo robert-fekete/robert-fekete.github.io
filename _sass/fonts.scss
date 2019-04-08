@@ -108,6 +108,12 @@ html{
     color: $highlight_color3;
 }
 
+.post-content{
+    a{
+        color: $highlight_color4;
+    }
+}
+
 // Index
 .pagination{
     @extend %title-shared;
@@ -127,5 +133,5 @@ html{
     font-family: $header_font_family;
     font-variant: small-caps;
     font-weight: $bold_weight;
-    font-size: $medium_font;
+    font-size: $small_font;
 }
