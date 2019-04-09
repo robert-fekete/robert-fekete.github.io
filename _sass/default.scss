@@ -71,23 +71,23 @@ body{
             margin-right: auto;
 
             @include for-phone-up{
-                max-width: 65rem
+                max-width: $content_width;
             }
         
             @include for-tablet-portrait-up{
-                max-width: 65rem;
+                max-width: $content_width;
             }
         
             @include for-tablet-landscape-up {
-                max-width: 65rem;
+                max-width: $content_width;
             }
         
             @include for-desktop-up {
-                max-width: 65rem;
+                max-width: $content_width;
             }
         
             @include for-desktop-wide-up {
-                width: 65rem;
+                width: $content_width;
             }
 
             .page-title{
@@ -113,6 +113,7 @@ body{
         text-align: center;
                 
         padding-top: 0px;
+        padding-bottom: 5px;
 
         @include for-tablet-landscape-up{
             padding-top: $footer_padding;

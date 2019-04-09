@@ -23,11 +23,51 @@
     }
 }
 
+.post-metadata{
+
+    padding-top: 5rem;
+}
+
 .post-tags{
-    padding-top: 10px;
+    display: grid;
+    max-width: $content_width;
+    grid-template-columns: auto auto;
+    grid-template-areas: "label values";
+    grid-gap: 0px;
+
     text-align: left;
+    
+    .post-tags-label{
+        padding-right: 5px;
+        grid-area: label;
+        padding-top: 10px;
+    }
+    
+    .post-tags-list{
+        grid-area: values;
+    }
 
     .post-tag{
+        display: inline-block;
+        width: fit-content;
+        border: 2px solid $highlight_color3;
         padding: 2px 5px 2px 5px;
+        margin: 5px;
+      
+        a{
+            color: $highlight_color3;
+            transition: all 0.2s ease-in-out;
+        }
+        a:hover{
+            color: $highlight_color4;
+        }
+
+        background-color: $color2;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .post-tag:hover{
+        background-color: $color_tag_hover;
+        border-color: $highlight_color4;
     }
 }

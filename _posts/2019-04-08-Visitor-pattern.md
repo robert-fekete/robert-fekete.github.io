@@ -2,7 +2,7 @@
 layout: post
 date: 2019-04-08
 title: Visitor pattern
-tags: ["Visitor&nbsp;pattern", "Design&nbsp;patterns", "Software&nbsp;design", "Object&nbsp;oriented&nbsp;programming"]
+tags: ["visitor&nbsp;pattern", "design&nbsp;patterns", "software&nbsp;design", "object&nbsp;oriented&nbsp;programming"]
 ---
 
 There is a lot of resource on the internet about design patterns and Visitor in particular. So, why am I writing a post about it? 

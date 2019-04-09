@@ -7,6 +7,7 @@ $header_font_family: 'Montserrat', sans-serif;
 $large_font: 3.0rem;
 $medium_font: 2.5rem;
 $small_font: 2.0rem;
+$tiny_font: 1.25rem;
 
 $bold_weight: 600;
 $normal_weight: 500;
@@ -100,7 +101,7 @@ html{
 .faded-body-text{
     @extend %body-shared;
     color: $font_fade_color;
-    text-align: justify;
+    font-size: $tiny_font;
 }
 
 .hard-link{
@@ -111,6 +112,11 @@ html{
 .post-content{
     a{
         color: $highlight_color4;
+        transition: color 0.2s ease-in-out;      
+    }
+    a:hover{
+        color: $highlight_color2;
+        text-decoration: none;
     }
 }
 
@@ -128,10 +134,18 @@ html{
     color: $font_color;
 }
 
-// // Post tag format, ugly (as hell)
+// Post tag format, ugly (as hell)
 .post-tag{
     font-family: $header_font_family;
     font-variant: small-caps;
     font-weight: $bold_weight;
     font-size: $small_font;
+
+    .post-tag-pound{
+        font-size: 1.5rem;
+    }
+
+    a:hover{
+        text-decoration: none;
+    }    
 }
