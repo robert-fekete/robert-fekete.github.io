@@ -163,7 +163,7 @@ The code undeniably does the same thing as before, but there are a few problems 
 
 We had to make data and functions public, so we can implement the logic in the visitors. This weakens the code and can lead to the following problems.
 
-All the checks has to happen outside of the class. If the client code forgets to implement the check, then our expectations (e.g. that the developer had two cups of coffee when `WriteCode` is called) might not be true.
+All the checks has to happen outside of the class. If the client code forgets to implement the check, then our internal rules (e.g. that the developer had two cups of coffee before `WriteCode`) might not be enforced (poor developer...).
 
 Variables are also set from the outside. This makes it impossible to enforce rules that effect multiple variables. A manager, for example, has to send two e-mails after each e-mail read. It is the client code now that has to make sure that happens.
 
